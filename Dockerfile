@@ -6,8 +6,8 @@ RUN apt-get -y install redis-server
 
 RUN sed -i "s/bind .*/bind 127.0.0.1/g" /etc/redis/redis.conf
 
-ADD run.sh /tmp/run.sh
-RUN chmod u+x /tmp/run.sh
+ADD run.sh /etc/sandbox_run.sh
+RUN chmod u+x /etc/sandbox_run.sh
 
 # start run!
-CMD ["./tmp/run.sh"]
+CMD ["./etc/sandbox_run.sh"]
